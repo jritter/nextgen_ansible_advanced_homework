@@ -1,3 +1,12 @@
 ---
 
 # tasks file for osp.servers
+#
+
+- os_auth:
+    cloud: openstack
+  register: auth
+
+- debug:
+    var: auth
+
