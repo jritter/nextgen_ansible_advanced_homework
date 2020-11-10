@@ -14,7 +14,7 @@
 
 - name: Copy index.html file to tomcat
   template:
-    src: template/index.html.j2
+    src: templates/index.html.j2
     dest: "{{ tomcat_web_root }}/index.html"
     owner: tomcat
     group: tomcat
