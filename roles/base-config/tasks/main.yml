@@ -9,8 +9,8 @@
     backup: yes
 
 - name: enable repos
-  get_url:
-    url: https://www.opentlc.com/download/ansible_bootcamp/repo/internal.repo
+  copy:
+    src: files/internal.repo
     dest: /etc/yum.repos.d/internal.repo
  
 #- name: install base tools and packages

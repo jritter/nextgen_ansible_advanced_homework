@@ -1,2 +1,28 @@
 ---
 
+- name: Install Tomcat
+  package:
+    name: "{{ payload }}"
+    state: present
+
+- name: Create Webroot in tomcat
+  file:
+    state: directory
+    path: "{{ tomcat_web_root }}"
+    owner: tomcat
+    group: tomcat
+
+- name: Copy index.html file to tomcat
+  template:
+    src: template/index.html.j2
+    dest: "{{ tomcat_web_root }}/index.html"
+    owner: tomcat
+    group: tomcat
+
+- name: Enable Tomcat
+  service:
+    name: "{{ payload }}"
+    state: started
+    enabled: true
+
+
