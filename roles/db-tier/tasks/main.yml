@@ -12,7 +12,7 @@
 
 - when: not r_postgres_init_dir_state.stat.exists
   name: Run Postgres initdb to initialize if postgres not initialized
-  command: "/usr/bin/initdb"
+  command: "su - postgres -c 'initdb -D /var/lib/pgsql/data'"
   notify: restart_postgres
 
 
@@ -25,7 +25,7 @@
 
 - name: Setup Postgres as started and enabled on boot.
   service:
-    name: "postgresql-server"
+    name: "postgresql"
     state: "started"
     enabled: "true"
 
