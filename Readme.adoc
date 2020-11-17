@@ -1,5 +1,15 @@
-==== Ansible Tower Config
+==== Homework submission
 
+This is jritter's submission of the Advanced Ansible Deployment ILT. It uses https://github.com/redhat-gpte-devopsautomation/nextgen_ansible_advanced_homework as a base, the existing structure outline below remains in place. The prexisting workflow has not been altered, and fully completes as illustrated by screenshot.
+
+image::cicd-workflow-screenshot.png[]
+
+
+The Grading playbook has completed successfully as outlined in link:grading-script.log[]
+
+
+
+==== Ansible Tower Config
 
 * From the cloned repo run `site-config-tower.yml` playbook to create job templates and workflow template.
 
